@@ -1,6 +1,6 @@
 package others;
 
-public class oops2 {
+public class oops02 {
     public static void main(String[] args) {
 
         // Part 1 - super() and this()
@@ -38,19 +38,28 @@ public class oops2 {
         // Part - 6
         // Dynamic method dispatch - polymorphism
 
-        X obj3 = new X();
-        obj3.show();
+//        X obj3 = new X();
+//        obj3.show();
 
         // class Y inherits X and class Z inherits X, so objects of Y and Z can be a
         // type of X as well.
         // objects of class Y can be a type of X if and only Y inherits X.
         // same goes for Z and X.
 
-        obj3 = new Y();
-        obj3.show();
+//        obj3 = new Y();
+//        obj3.show();
 
-        obj3 = new Z();
-        obj3.show();
+//        obj3 = new Z();
+//        obj3.show();
+
+// Typecasting - Upcasting
+        X obj3 = new Y(); // creating an object from derived class with a type of base class.
+        obj3.show1(); // type is upcasted.
+//        obj3.show2(); // Doesn't work because its reference is to base class and not derived class.
+
+// Typecsting - Downcasting
+        Y obj03 = (Y) obj3; // changing the type to derived class from base class.
+        obj03.show2(); // works because its reference is to derived class and not to base class.
 
         // part - 7
         // final keyword - variable, class, method
@@ -152,10 +161,16 @@ class X {
     public void show() {
         System.out.println("In X show");
     }
+    public void show1() {
+        System.out.println("In X show");
+    }
 }
 
 class Y extends X {
     public void show() {
+        System.out.println("In Y show");
+    }
+    public void show2() {
         System.out.println("In Y show");
     }
 }
@@ -184,7 +199,7 @@ class Comp {
 }
 
 class lap extends Comp {
-    void show() {
-        System.out.println("in lap show");
-    }
+//    void show() {
+//        System.out.println("in lap show");
+//    }
 }
