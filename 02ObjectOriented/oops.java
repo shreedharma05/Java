@@ -79,18 +79,20 @@ public class oops {
         // static block
 
         // static variables should go inside static block.
-        // so while creating an object we have to give required parameters in
+        // while creating an object we have to give required parameters in
         // constructor method but it doesn't makes sense to pass static variable in
         // constructor so it has its own block called static block.
 
-        // when an object gets created, first the class loads and then object gets
+        // when first object gets created, first the class loads (ones for all objects)
+        // and then object gets
         // instantiated, when object gets instantiated the constructor executes only
-        // once.
+        // once for each object.
         // when class loads the static bolck executes. as the class loads only once the
         // static block also executes only once.
         // JVM has a class loader where all the classes gets loaded
-        // class loads only once and that too if an object gets created, if no objects
-        // are created then class doesn't loads, if it doesn't loads then static block
+        // class loads only once and that too if an object gets created, if objects
+        // aren't created then class doesn't loads, if it doesn't loads then static
+        // block
         // doesn't executes.
 
         // To load your class without creating object,

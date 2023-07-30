@@ -25,12 +25,45 @@ public class oops05 {
             default:
                 System.out.println("Done.");
         }
+
+        // Part 2 - Enum class
+        for (Laptops lap : Laptops.values()) {
+            System.out.println(lap + " : " + lap.getPrice());
+        }
+
     }
 }
 
+// Part 1
 // Status is a class by default and Failed, Running, Pending, Success are
 // objects of Status.
 // They have an index starting from 0.
 enum Status {
+    // by default public, static and final
     Failed, Running, Pending, Success
+}
+
+// Part 2
+enum Laptops {
+    Macbook(1800), Aero(1300), Spectre(1800), XPS(2000), Ideapad();
+
+    private int price;
+
+    // Private constructor works because objects are created inside the class.
+    private Laptops() {
+        this.price = 500;
+    }
+
+    private Laptops(int price) {
+        this.price = price;
+        System.out.println(this.name());
+    }
+
+    public int getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }
